@@ -93,7 +93,7 @@
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 650px;
             animation: slideUp 1s ease-out;
         }
 
@@ -120,6 +120,7 @@
         .btn-group {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap; /* Cho phép rớt xuống dòng nếu trên màn hình nhỏ */
         }
 
         .btn {
@@ -363,10 +364,11 @@
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Xem Dự Án</a>
                 <a href="CV_VuThiNhung.pdf.pdf" class="btn btn-outline" target="_blank"><i class="fa-solid fa-download"></i> Tải CV</a>
+                <!-- Nút Đọc Tài Liệu được nhúng thông qua Google Docs Viewer -->
+                <a href="https://docs.google.com/viewer?url=https://nhungvuthi-rgb.github.io/làm%20giàu%20kiểu%20cụ%20hồ%20tập%201.docx" class="btn btn-outline" target="_blank"><i class="fa-solid fa-book-open"></i> Đọc Tài Liệu</a>
             </div>
         </div>
         <div class="hero-image">
-            <!-- Ảnh đại diện sẽ được load từ file avatar.jpg.jfif -->
             <img src="avatar.jpg.jfif" alt="Vũ Thị Nhung">
         </div>
     </section>
