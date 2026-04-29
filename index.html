@@ -4,167 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Vũ Thị Nhung</title>
-    <meta name="description" content="Portfolio của Vũ Thị Nhung - Sinh viên Tài chính ngân hàng">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Nhung<span>Vu</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#education">Học vấn</a></li>
-                <li><a href="#projects">Dự án</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </div>
-    </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0A2540;
+            --primary-light: #1A365D;
+            --accent: #00D4FF;
+            --accent-hover: #00B3D9;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --bg-color: #F7FAFC;
+            --card-bg: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <span class="greeting">Xin chào, tôi là</span>
-                <h1 class="name">Vũ Thị Nhung</h1>
-                <h2 class="title">Sinh viên Tài chính Ngân hàng</h2>
-                <p class="description">
-                    Đam mê đầu tư chứng khoán, phân tích dữ liệu tài chính và luôn chú trọng sự tỉ mỉ, chính xác trong công việc.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn primary-btn">Xem Dự Án</a>
-                    <a href="#contact" class="btn secondary-btn">Liên Hệ</a>
-                    <a href="CV_VuThiNhung.pdf.pdf" target="_blank" class="btn primary-btn" style="background-color: #1e293b; border-color: #1e293b;"><i class="fas fa-file-download" style="margin-right: 5px;"></i> Tải CV</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <!-- Ảnh đại diện của bạn -->
-                    <img src="avatar.jpg.jfif" alt="Vũ Thị Nhung" class="profile-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Vu+Thi+Nhung&size=400&background=2563eb&color=fff&font-size=0.33';">
-                </div>
-            </div>
-        </section>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-        <section id="about" class="about">
-            <div class="section-title">
-                <h2>Giới Thiệu Bản Thân</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Tôi là sinh viên năm 3 ngành Tài chính Ngân hàng và có niềm đam mê đặc biệt với đầu tư chứng khoán.</p>
-                    <p>Tôi là người nhanh nhẹn, linh hoạt và có trách nhiệm cao. Trong công việc, tôi luôn đề cao sự tỉ mỉ, độ chính xác và tính cẩn thận. Tôi hòa đồng, có khả năng làm việc nhóm tốt và luôn không ngừng nỗ lực học hỏi để hoàn thành xuất sắc mọi nhiệm vụ được giao.</p>
-                </div>
-                <div class="skills">
-                    <div class="skill-tag"><i class="fas fa-file-excel"></i> Tin học văn phòng MOS (Excel, Word, PowerPoint)</div>
-                    <div class="skill-tag"><i class="fas fa-language"></i> Chứng chỉ Tiếng Anh TOEIC</div>
-                    <div class="skill-tag"><i class="fas fa-chart-pie"></i> Phân tích Tài chính</div>
-                    <div class="skill-tag"><i class="fas fa-search-dollar"></i> Định giá Cổ phiếu</div>
-                    <div class="skill-tag"><i class="fas fa-users"></i> Kỹ năng Làm việc nhóm</div>
-                </div>
-            </div>
-        </section>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-        <section id="education" class="education">
-            <div class="section-title">
-                <h2>Học Vấn & Hoạt Động</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Học Vấn</h3>
-                    <div class="edu-item">
-                        <h4>Đại học Phenikaa (Khoa Kinh tế)</h4>
-                        <p class="edu-meta">Sinh viên năm 3 • Ngành Tài chính Ngân hàng</p>
-                        <div class="gpa-badge">GPA: 3.2 / 4.0</div>
-                        <p class="mt-4"><strong>Các môn học chuyên ngành nổi bật:</strong></p>
-                        <ul class="course-list">
-                            <li>Tài chính doanh nghiệp</li>
-                            <li>Phân tích đầu tư chứng khoán</li>
-                            <li>Nghiệp vụ Ngân hàng Thương mại (NHTM)</li>
-                            <li>Quản trị danh mục đầu tư</li>
-                        </ul>
-                    </div>
-                </div>
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-                <div class="edu-card">
-                    <div class="card-icon"><i class="fas fa-users-cog"></i></div>
-                    <h3>Hoạt Động Ngoại Khóa</h3>
-                    <div class="edu-item">
-                        <h4>Workshop & Hội thảo Tài chính</h4>
-                        <p class="edu-desc">Tích cực tham gia các buổi workshop, hội thảo về tài chính và đầu tư chứng khoán nhằm cập nhật tình hình kinh tế thị trường, trau dồi kiến thức thực tế và mở rộng tư duy phân tích.</p>
-                        <p class="edu-desc mt-3">Qua các hoạt động này, tôi phát triển khả năng nhạy bén với tin tức thị trường, xây dựng mạng lưới quan hệ trong ngành và vận dụng lý thuyết vào thực tiễn đầu tư cá nhân.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
 
-        <section id="projects" class="projects">
-            <div class="section-title">
-                <h2>Dự Án & Nghiên Cứu</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="project-grid single-project">
-                <div class="project-card">
-                    <div class="project-content-full">
-                        <h3>Equity Valuation and Financial Analysis of MBB Bank</h3>
-                        <p class="project-desc">
-                            <strong>Mô tả:</strong> Thực hiện phân tích tài chính chuyên sâu và định giá cổ phiếu của Ngân hàng Quân đội (MBBank) để đánh giá tiềm năng tăng trưởng và sức hấp dẫn đầu tư. Dự án tập trung vào đánh giá hiệu quả kinh doanh, phân tích dữ liệu tài chính và ước tính giá trị nội tại của cổ phiếu.
-                        </p>
-                        
-                        <div class="project-details">
-                            <div class="detail-column">
-                                <h4>Trách nhiệm chính:</h4>
-                                <ul>
-                                    <li>Nghiên cứu và phân tích báo cáo tài chính cùng dữ liệu thị trường.</li>
-                                    <li>Đánh giá tiềm năng tăng trưởng và định giá cổ phiếu MBB.</li>
-                                    <li>Phát triển các góc nhìn đầu tư và trình bày kết quả trong một báo cáo cấu trúc rõ ràng.</li>
-                                    <li>Sử dụng thành thạo Microsoft Office (đặc biệt Excel và Word) để xử lý dữ liệu và hoàn thiện phân tích.</li>
-                                </ul>
-                            </div>
-                            <div class="detail-column">
-                                <h4>Kỹ năng đạt được:</h4>
-                                <div class="skills-mini">
-                                    <span>Nghiên cứu & Phân tích dữ liệu</span>
-                                    <span>Phân tích tài chính</span>
-                                    <span>Định giá cổ phiếu</span>
-                                    <span>Tư duy phản biện</span>
-                                    <span>Viết báo cáo & Thuyết trình</span>
-                                </div>
-                                
-                                <h4 class="mt-4">Thành tựu:</h4>
-                                <p class="achievement-text"><i class="fas fa-award text-accent"></i> Bài nghiên cứu được công nhận về chất lượng và giá trị phân tích thực tiễn.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        .logo span {
+            color: var(--accent);
+        }
 
-        <section id="contact" class="contact">
-            <div class="section-title">
-                <h2>Liên Hệ</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-container">
-                <p>Tôi luôn mở rộng cơ hội học hỏi và hợp tác trong lĩnh vực Tài chính - Đầu tư.</p>
-                <div class="social-links">
-                    <a href="mailto:nhungvuthi28072005@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/nhung-vũ-540760264" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <div class="contact-info-text">
-                    <p><i class="fas fa-envelope"></i> nhungvuthi28072005@gmail.com</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    <footer>
-        <p>&copy; 2026 Vũ Thị Nhung. Bản quyền trang web.</p>
-    </footer>
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            
