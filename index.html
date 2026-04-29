@@ -94,4 +94,345 @@
 
         .hero-content {
             max-width: 600px;
-            
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #E2E8F0;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-top: 4px solid var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        ul.custom-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        ul.custom-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Project specific */
+        .project-card {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+                clip-path: none;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; 
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Vũ Thị <span>Nhung</span></a>
+        <nav>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#education">Học vấn</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Xin chào, tôi là<br>Vũ Thị Nhung</h1>
+            <h2 class="hero-subtitle">Sinh viên Tài chính Ngân hàng</h2>
+            <p class="hero-desc">Đam mê đầu tư chứng khoán, phân tích dữ liệu tài chính và luôn chú trọng sự tỉ mỉ, chính xác trong công việc.</p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Xem Dự Án</a>
+                <a href="CV_VuThiNhung.pdf" class="btn btn-outline" target="_blank"><i class="fa-solid fa-download"></i> Tải CV</a>
+            </div>
+        </div>
+        <div class="hero-image" style="display: none;">
+            <!-- Placeholder for profile image if added later -->
+        </div>
+    </section>
+
+    <div class="container" id="about">
+        <h2 class="section-title">Giới Thiệu Bản Thân</h2>
+        <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div class="card-icon" style="margin: 0 auto 1.5rem;"><i class="fa-regular fa-user"></i></div>
+            <p style="font-size: 1.1rem; color: var(--text-muted);">
+                Tôi là sinh viên năm 3 ngành Tài chính Ngân hàng và có niềm đam mê đặc biệt với đầu tư chứng khoán. Tôi là người nhanh nhẹn, linh hoạt và có trách nhiệm cao. Trong công việc, tôi luôn đề cao sự tỉ mỉ, độ chính xác và tính cẩn thận. Tôi hòa đồng, có khả năng làm việc nhóm tốt và luôn không ngừng nỗ lực học hỏi để hoàn thành xuất sắc mọi nhiệm vụ được giao.
+            </p>
+        </div>
+    </div>
+
+    <div class="container" id="education" style="padding-top: 0;">
+        <h2 class="section-title">Học Vấn & Hoạt Động</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <span class="tag">Đại học Phenikaa</span>
+                <h3 class="card-title">Ngành Tài chính Ngân hàng</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Sinh viên năm 3 • Khoa Kinh tế</p>
+                <p><strong>Các môn học chuyên ngành nổi bật:</strong></p>
+                <ul class="custom-list">
+                    <li>Tài chính doanh nghiệp</li>
+                    <li>Phân tích đầu tư chứng khoán</li>
+                    <li>Nghiệp vụ Ngân hàng Thương mại</li>
+                    <li>Quản trị danh mục đầu tư</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                <span class="tag">Hoạt Động Ngoại Khóa</span>
+                <h3 class="card-title">Workshop & Hội thảo</h3>
+                <p style="color: var(--text-muted);">
+                    Tích cực tham gia các buổi workshop, hội thảo về tài chính và đầu tư chứng khoán nhằm cập nhật tình hình kinh tế thị trường, trau dồi kiến thức thực tế và mở rộng tư duy phân tích.
+                </p>
+                <br>
+                <p style="color: var(--text-muted);">
+                    Qua đó, tôi phát triển khả năng nhạy bén với tin tức thị trường, xây dựng mạng lưới quan hệ trong ngành và vận dụng lý thuyết vào thực tiễn đầu tư cá nhân.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="projects" style="padding-top: 0;">
+        <h2 class="section-title">Dự Án & Nghiên Cứu</h2>
+        <div class="grid">
+            <div class="card project-card">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <span class="tag">Phân tích chuyên sâu</span>
+                    <h3 class="card-title" style="font-size: 1.8rem;">Equity Valuation & Financial Analysis of MBB Bank</h3>
+                </div>
+                <div>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                        <strong>Mô tả:</strong> Thực hiện phân tích tài chính chuyên sâu và định giá cổ phiếu của Ngân hàng Quân đội (MBBank) để đánh giá tiềm năng tăng trưởng và sức hấp dẫn đầu tư. Dự án tập trung vào đánh giá hiệu quả kinh doanh, phân tích dữ liệu tài chính và ước tính giá trị nội tại của cổ phiếu.
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <p><strong>Trách nhiệm chính:</strong></p>
+                            <ul class="custom-list">
+                                <li>Nghiên cứu BCTC & dữ liệu thị trường.</li>
+                                <li>Đánh giá tiềm năng và định giá MBB.</li>
+                                <li>Sử dụng thành thạo Excel/Word xử lý dữ liệu.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p><strong>Thành tựu:</strong></p>
+                            <div style="background: rgba(0, 212, 255, 0.05); padding: 1rem; border-radius: 10px; margin-top: 0.5rem; border: 1px solid rgba(0,212,255,0.2);">
+                                <i class="fa-solid fa-trophy" style="color: #F6E05E; margin-right: 0.5rem;"></i>
+                                Bài nghiên cứu được công nhận về chất lượng và giá trị phân tích thực tiễn.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Sẵn sàng kết nối</h2>
+        <p style="color: #A0AEC0; margin-bottom: 2rem; max-width: 500px; margin-inline: auto;">Tôi luôn mở rộng cơ hội học hỏi và hợp tác trong lĩnh vực Tài chính - Đầu tư.</p>
+        <a href="mailto:nhungvuthi28072005@gmail.com" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+            <i class="fa-solid fa-envelope"></i> nhungvuthi28072005@gmail.com
+        </a>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p style="margin-top: 3rem; font-size: 0.9rem; color: #4A5568;">&copy; 2026 Vũ Thị Nhung. Bản quyền trang web.</p>
+    </footer>
+
+</body>
+</html>
