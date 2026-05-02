@@ -117,11 +117,11 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Buttons & Dropdown */
+        /* Buttons */
         .btn-group {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap; /* Cho phép rớt xuống dòng nếu trên màn hình nhỏ */
+            flex-wrap: wrap;
             align-items: center;
         }
 
@@ -158,59 +158,18 @@
             transform: translateY(-2px);
         }
 
-        /* Dropdown Menu CSS */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--card-bg);
-            min-width: 300px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border-radius: 15px;
-            z-index: 100;
-            top: 110%;
-            left: 0;
-            overflow: hidden;
-            animation: fadeIn 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .dropdown-content a {
-            color: var(--text-main);
-            padding: 1rem 1.5rem;
-            text-decoration: none;
-            display: block;
-            font-weight: 500;
-            transition: var(--transition);
-            border-bottom: 1px solid #edf2f7;
-            font-size: 0.95rem;
-            text-align: left;
-        }
-
-        .dropdown-content a i {
-            margin-right: 10px;
-            color: var(--accent);
-            width: 20px;
-            text-align: center;
-        }
-
-        .dropdown-content a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(0, 212, 255, 0.08);
+        /* Nút chuyên dụng dùng trong các ô vuông tài liệu */
+        .btn-card {
+            border: 2px solid var(--accent);
             color: var(--primary);
-            padding-left: 2rem; /* Hiệu ứng lướt nhẹ sang phải rất sang trọng */
+            background: transparent;
+            margin-top: 1rem;
         }
 
-        /* Khi di chuột vào nút thì menu xổ xuống */
-        .dropdown:hover .dropdown-content {
-            display: block;
+        .btn-card:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
         /* Avatar styling */
@@ -261,6 +220,13 @@
             gap: 2rem;
         }
 
+        /* Grid riêng cho tài liệu để nó nhỏ gọn hơn một chút */
+        .grid-docs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -268,6 +234,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: var(--transition);
             border-top: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -397,11 +365,6 @@
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0px); }
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
@@ -413,7 +376,7 @@
                 <li><a href="#about">Giới thiệu</a></li>
                 <li><a href="#education">Học vấn</a></li>
                 <li><a href="#projects">Dự án</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#documents">Tài liệu</a></li>
             </ul>
         </nav>
     </header>
@@ -426,21 +389,8 @@
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Xem Dự Án</a>
                 <a href="CV_VuThiNhung.pdf.pdf" class="btn btn-outline" target="_blank"><i class="fa-solid fa-download"></i> Tải CV</a>
-                
-                <!-- Nút Tài Liệu với Menu xổ xuống -->
-                <div class="dropdown">
-                    <a href="#" class="btn btn-outline" onclick="event.preventDefault();"><i class="fa-solid fa-layer-group"></i> Tài Liệu <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <!-- Danh sách 6 tập tài liệu đã kết nối link chuẩn -->
-                        <a href="làm giàu kiểu cụ hồ tập 1.pdf" target="_blank"><i class="fa-solid fa-book"></i> Làm Giàu Kiểu Cụ Hồ - Tập 1</a>
-                        <a href="lam_giau_kieu_cu_ho_tap_2.pdf" target="_blank"><i class="fa-solid fa-book"></i> Làm Giàu Kiểu Cụ Hồ - Tập 2</a>
-                        <a href="lam_giau_kieu_cu_ho_tap_3.pdf" target="_blank"><i class="fa-solid fa-book"></i> Làm Giàu Kiểu Cụ Hồ - Tập 3</a>
-                        <a href="lam_giau_kieu_cu_ho_tap_4.pdf" target="_blank"><i class="fa-solid fa-book"></i> Làm Giàu Kiểu Cụ Hồ - Tập 4</a>
-                        <a href="lam_giau_kieu_cu_ho_tap_5.pdf" target="_blank"><i class="fa-solid fa-book"></i> Làm Giàu Kiểu Cụ Hồ - Tập 5</a>
-                        <a href="lam_giau_kieu_cu_ho_tap_6.pdf" target="_blank"><i class="fa-solid fa-book"></i> Làm Giàu Kiểu Cụ Hồ - Tập 6</a>
-                    </div>
-                </div>
-
+                <!-- Nút này giờ sẽ trượt xuống khu vực Thư viện Tài liệu -->
+                <a href="#documents" class="btn btn-outline"><i class="fa-solid fa-layer-group"></i> Kho Tài Liệu</a>
             </div>
         </div>
         <div class="hero-image">
@@ -522,6 +472,74 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- KHU VỰC THƯ VIỆN TÀI LIỆU MỚI THÊM -->
+    <div class="container" id="documents" style="padding-top: 0;">
+        <h2 class="section-title">Tài Liệu & Sách</h2>
+        <div class="grid-docs">
+            
+            <!-- Tập 1 -->
+            <div class="card" style="text-align: center; align-items: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem; background: rgba(255, 152, 0, 0.1); color: #FF9800;"><i class="fa-solid fa-book"></i></div>
+                <h3 class="card-title">Làm Giàu Kiểu Cụ Hồ</h3>
+                <span class="tag" style="background: rgba(255, 152, 0, 0.1); color: #E65100;">Tập 1</span>
+                <div style="margin-top: auto; width: 100%;">
+                    <a href="làm giàu kiểu cụ hồ tập 1.pdf" target="_blank" class="btn btn-card" style="width: 100%; justify-content: center;"><i class="fa-brands fa-readme"></i> Đọc Tập 1</a>
+                </div>
+            </div>
+
+            <!-- Tập 2 -->
+            <div class="card" style="text-align: center; align-items: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem; background: rgba(255, 152, 0, 0.1); color: #FF9800;"><i class="fa-solid fa-book"></i></div>
+                <h3 class="card-title">Làm Giàu Kiểu Cụ Hồ</h3>
+                <span class="tag" style="background: rgba(255, 152, 0, 0.1); color: #E65100;">Tập 2</span>
+                <div style="margin-top: auto; width: 100%;">
+                    <a href="lam_giau_kieu_cu_ho_tap_2.pdf" target="_blank" class="btn btn-card" style="width: 100%; justify-content: center;"><i class="fa-brands fa-readme"></i> Đọc Tập 2</a>
+                </div>
+            </div>
+
+            <!-- Tập 3 -->
+            <div class="card" style="text-align: center; align-items: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem; background: rgba(255, 152, 0, 0.1); color: #FF9800;"><i class="fa-solid fa-book"></i></div>
+                <h3 class="card-title">Làm Giàu Kiểu Cụ Hồ</h3>
+                <span class="tag" style="background: rgba(255, 152, 0, 0.1); color: #E65100;">Tập 3</span>
+                <div style="margin-top: auto; width: 100%;">
+                    <a href="lam_giau_kieu_cu_ho_tap_3.pdf" target="_blank" class="btn btn-card" style="width: 100%; justify-content: center;"><i class="fa-brands fa-readme"></i> Đọc Tập 3</a>
+                </div>
+            </div>
+
+            <!-- Tập 4 -->
+            <div class="card" style="text-align: center; align-items: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem; background: rgba(255, 152, 0, 0.1); color: #FF9800;"><i class="fa-solid fa-book"></i></div>
+                <h3 class="card-title">Làm Giàu Kiểu Cụ Hồ</h3>
+                <span class="tag" style="background: rgba(255, 152, 0, 0.1); color: #E65100;">Tập 4</span>
+                <div style="margin-top: auto; width: 100%;">
+                    <a href="lam_giau_kieu_cu_ho_tap_4.pdf" target="_blank" class="btn btn-card" style="width: 100%; justify-content: center;"><i class="fa-brands fa-readme"></i> Đọc Tập 4</a>
+                </div>
+            </div>
+
+            <!-- Tập 5 -->
+            <div class="card" style="text-align: center; align-items: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem; background: rgba(255, 152, 0, 0.1); color: #FF9800;"><i class="fa-solid fa-book"></i></div>
+                <h3 class="card-title">Làm Giàu Kiểu Cụ Hồ</h3>
+                <span class="tag" style="background: rgba(255, 152, 0, 0.1); color: #E65100;">Tập 5</span>
+                <div style="margin-top: auto; width: 100%;">
+                    <a href="lam_giau_kieu_cu_ho_tap_5.pdf" target="_blank" class="btn btn-card" style="width: 100%; justify-content: center;"><i class="fa-brands fa-readme"></i> Đọc Tập 5</a>
+                </div>
+            </div>
+
+            <!-- Tập 6 -->
+            <div class="card" style="text-align: center; align-items: center;">
+                <div class="card-icon" style="margin: 0 auto 1.5rem; background: rgba(255, 152, 0, 0.1); color: #FF9800;"><i class="fa-solid fa-book"></i></div>
+                <h3 class="card-title">Làm Giàu Kiểu Cụ Hồ</h3>
+                <span class="tag" style="background: rgba(255, 152, 0, 0.1); color: #E65100;">Tập 6</span>
+                <div style="margin-top: auto; width: 100%;">
+                    <a href="lam_giau_kieu_cu_ho_tap_6.pdf" target="_blank" class="btn btn-card" style="width: 100%; justify-content: center;"><i class="fa-brands fa-readme"></i> Đọc Tập 6</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
